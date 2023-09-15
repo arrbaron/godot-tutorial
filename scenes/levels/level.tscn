@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://orxnqpjckw6k"]
+[gd_scene load_steps=5 format=3 uid="uid://orxnqpjckw6k"]
 
 [ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_41nkb"]
 [ext_resource type="Texture2D" uid="uid://3kkdngxw3p0y" path="res://icon.svg" id="1_j1mmf"]
 [ext_resource type="Script" path="res://scenes/Logo.gd" id="2_270k1"]
+[ext_resource type="PackedScene" uid="uid://81uyqhs3lg75" path="res://scenes/levels/player.tscn" id="4_5ginh"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_41nkb")
@@ -10,3 +11,6 @@ script = ExtResource("1_41nkb")
 [node name="Logo" type="Sprite2D" parent="."]
 texture = ExtResource("1_j1mmf")
 script = ExtResource("2_270k1")
+
+[node name="Player" parent="." instance=ExtResource("4_5ginh")]
+position = Vector2(604, 269)

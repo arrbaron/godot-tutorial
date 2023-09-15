@@ -21,7 +21,9 @@ func _process(delta):
 		
 	move()
 	
-		
+	Input.is_action_pressed("left"):
+	
+	
 
 func move():
 	$Logo.position += Vector2(move_speed, 0)
