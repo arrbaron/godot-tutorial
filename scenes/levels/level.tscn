@@ -14,11 +14,3 @@ script = ExtResource("2_270k1")
 
 [node name="Player" parent="." instance=ExtResource("4_5ginh")]
 position = Vector2(604, 269)
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-
-[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D"]
-
-[node name="Sprite2D3" type="Sprite2D" parent="Sprite2D/Sprite2D2"]
-
-[node name="Sprite2D4" type="Sprite2D" parent="Sprite2D/Sprite2D2/Sprite2D3"]
