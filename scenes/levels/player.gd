@@ -4,6 +4,8 @@ var move_speed: int = 200
 
 func _process(delta):
 	handle_input(delta)
+	print($"..".test_array)
+	$"..".test_function();
 	
 func handle_input(delta):
 	var direction = Input.get_vector('left', 'right', 'up', 'down')

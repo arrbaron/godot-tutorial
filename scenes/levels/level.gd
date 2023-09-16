@@ -4,15 +4,13 @@ const move_speed: float = 5
 const rotation_speed: float = 100
 var test_array: Array[String] = ['Test', 'Hello', 'Yo']
 
+var my_node: Node2D
+
 func _ready():
 #	get_node("Logo").rotation_degrees = 90
 	$Logo.rotation_degrees = 90
+	my_node = $Player
 	
-	print(test_array[0])
-	
-	for i in test_array:
-		print(i)
-
 func _process(delta):
 	$Logo.rotation_degrees += rotation_speed * delta
 	
@@ -21,9 +19,6 @@ func _process(delta):
 		
 	move()
 	
-	Input.is_action_pressed("left"):
-	
-	
 
 func move():
 	$Logo.position += Vector2(move_speed, 0)
@@ -31,3 +26,6 @@ func move():
 	if $Logo.pos.x > 1000:
 		$Logo.pos = Vector2.ZERO
 		
+		
+func test_function():
+	print('this is a test function')
