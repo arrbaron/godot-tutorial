@@ -1,15 +1,14 @@
-extends Node2D
+extends CharacterBody2D
 
 var move_speed: int = 200
 
-func _process(delta):
-	handle_input(delta)
-	print($"..".test_array)
-	$"..".test_function();
+func _process(_delta):
+	handle_input()
 	
-func handle_input(delta):
+func handle_input():
 	var direction = Input.get_vector('left', 'right', 'up', 'down')
-	position += direction * move_speed * delta
+	velocity = direction * move_speed
+	move_and_slide()
 	
 	if (Input.is_action_pressed('primary action')):
 		print('shoot laser')
