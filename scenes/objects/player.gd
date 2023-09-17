@@ -4,9 +4,8 @@ var move_speed: int = 200
 var can_laser: bool = true
 var can_grenade: bool = true
 
-signal laser
-signal grenade
-
+signal laser(position: Vector2)
+signal grenade(position: Vector2)
 
 func _process(_delta):
 	handle_input()
@@ -18,13 +17,18 @@ func handle_input():
 	
 	if (Input.is_action_pressed('primary action')):
 		if (!can_laser): return
-		laser.emit()
+		var laser_markers = $LaserStartPositions.get_children()
+		# var selected_laser = laser_markers[randi() % laser_markers.size()]
+		var selected_laser = laser_markers.pick_random()
 		can_laser = false
 		$LaserTimer.start()
 		
+		laser.emit(selected_laser.global_position)
+		
 	if (Input.is_action_pressed("secondary action")):
 		if (!can_grenade): return
-		grenade.emit()
+		
+		grenade.emit($GrenadeStartPosition.global_position)
 		can_grenade = false
 		$GrenadeTimer.start()
 

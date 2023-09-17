@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bsra8klpn5ik4"]
+
+[ext_resource type="Texture2D" uid="uid://dl8nria2rxply" path="res://graphics/projectiles/grenade.png" id="1_acnjt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_28xep"]
+radius = 81.2219
+
+[node name="Grenade" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_acnjt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.25, 0.25)
+shape = SubResource("CircleShape2D_28xep")
