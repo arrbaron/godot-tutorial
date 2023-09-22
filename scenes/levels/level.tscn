@@ -55,7 +55,7 @@ script = ExtResource("1_41nkb")
 
 [node name="Soil" type="Sprite2D" parent="Ground"]
 texture_repeat = 2
-position = Vector2(576, 691)
+position = Vector2(577, 691)
 texture = ExtResource("2_d5t72")
 region_enabled = true
 region_rect = Rect2(-1862.56, -372.875, 16000, 10000)
@@ -101,11 +101,11 @@ texture = ExtResource("8_7uu3c")
 [node name="Gate" parent="." instance=ExtResource("3_2m78h")]
 position = Vector2(492, -243)
 
-[node name="Projectiles" type="Node2D" parent="."]
-
 [node name="House" parent="." instance=ExtResource("13_5mm2i")]
-position = Vector2(-3740, 3048)
-rotation = 4.71239
+position = Vector2(1626, 3422)
+rotation = 3.14159
+
+[node name="Projectiles" type="Node2D" parent="."]
 
 [node name="Player" parent="." instance=ExtResource("4_5ginh")]
 position = Vector2(581, 698)
