@@ -12,3 +12,6 @@ func handle_movement():
 	
 	if (position.x > 1000):
 		position = Vector2(0, position.y)
+
+func hit():
+	print('damage')
