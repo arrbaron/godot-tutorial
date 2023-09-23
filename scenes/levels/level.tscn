@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://orxnqpjckw6k"]
+[gd_scene load_steps=19 format=3 uid="uid://orxnqpjckw6k"]
 
 [ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_41nkb"]
 [ext_resource type="Texture2D" uid="uid://ih53trsvtfip" path="res://graphics/ground/stones.png" id="2_d5t72"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://dmy1vpliglvet" path="res://graphics/tilesets/soil.png" id="10_nldym"]
 [ext_resource type="PackedScene" uid="uid://dgo067h2w0q4g" path="res://scenes/objects/steam_vent.tscn" id="11_be5a3"]
 [ext_resource type="PackedScene" uid="uid://b53dih70mh1vj" path="res://scenes/houses/house.tscn" id="13_5mm2i"]
+[ext_resource type="PackedScene" uid="uid://dua3aoucs5gmy" path="res://scenes/objects/light_fan_animation.tscn" id="13_6uusf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l1ea7"]
 resource_name = "walls"
@@ -102,14 +103,22 @@ texture = ExtResource("8_7uu3c")
 [node name="SteamVent" parent="Ground" instance=ExtResource("11_be5a3")]
 position = Vector2(745, 946)
 
-[node name="Gate" parent="." instance=ExtResource("3_2m78h")]
-position = Vector2(492, -243)
-
-[node name="House" parent="." instance=ExtResource("13_5mm2i")]
+[node name="House" parent="Ground" instance=ExtResource("13_5mm2i")]
 position = Vector2(1626, 3422)
 rotation = 3.14159
+metadata/_edit_lock_ = true
+
+[node name="LightFanAnimation" parent="Ground" instance=ExtResource("13_6uusf")]
+position = Vector2(-340, 2378)
+autoplay = "default"
+frame_progress = 0.106604
+
+[node name="Gate" parent="." instance=ExtResource("3_2m78h")]
+position = Vector2(492, -243)
+metadata/_edit_lock_ = true
 
 [node name="Projectiles" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("4_5ginh")]
 position = Vector2(581, 698)
@@ -121,6 +130,7 @@ position_smoothing_enabled = true
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 color = Color(0.643137, 0.498039, 0.105882, 1)
 energy = 0.21
+metadata/_edit_lock_ = true
 
 [connection signal="player_entered_gate" from="Gate" to="." method="_on_gate_player_entered_gate"]
 [connection signal="grenade" from="Player" to="." method="_on_player_grenade"]
