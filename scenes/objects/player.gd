@@ -41,7 +41,7 @@ func handle_input():
 		
 	if (Input.is_action_pressed("secondary action")):
 		if (!can_grenade): return
-		if (Globals.laser_amount < 1):
+		if (Globals.grenade_amount < 1):
 			print('out of grenades!')
 			return;
 			
