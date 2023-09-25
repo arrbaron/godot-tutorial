@@ -9,6 +9,7 @@ var can_grenade: bool = true
 signal laser(position: Vector2, direction: Vector2)
 signal grenade(position: Vector2, direction: Vector2)
 
+
 func _process(_delta):
 	handle_input()
 	
@@ -22,6 +23,12 @@ func handle_input():
 	
 	if (Input.is_action_pressed('primary action')):
 		if (!can_laser): return
+		if (Globals.laser_amount < 1):
+			print('out of ammo!')
+			return
+			
+		Globals.laser_amount -= 1
+			
 		var laser_markers = $LaserStartPositions.get_children()
 		# var selected_laser = laser_markers[randi() % laser_markers.size()]
 		var selected_laser = laser_markers.pick_random()
@@ -34,6 +41,11 @@ func handle_input():
 		
 	if (Input.is_action_pressed("secondary action")):
 		if (!can_grenade): return
+		if (Globals.laser_amount < 1):
+			print('out of grenades!')
+			return;
+			
+		Globals.grenade_amount -= 1
 		
 		grenade.emit($GrenadeStartPosition.global_position, player_direction)
 		can_grenade = false
