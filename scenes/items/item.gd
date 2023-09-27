@@ -25,6 +25,12 @@ func set_color():
 		$Sprite2D.modulate = Color.GREEN
 
 
-func _on_body_entered(body):
-	body.add_item(type)
+func _on_body_entered(_body):
+	if type == ITEM_TYPE.LASER:
+		Globals.laser_amount += 5
+	elif type == ITEM_TYPE.GRENADE:
+		Globals.grenade_amount += 10
+	elif type == ITEM_TYPE.HEALTH:
+		Globals.health += 10
+		
 	queue_free()
