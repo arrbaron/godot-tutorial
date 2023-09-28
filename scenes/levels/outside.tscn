@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://blpbc0a83rg8n"]
+[gd_scene load_steps=19 format=3 uid="uid://blpbc0a83rg8n"]
 
 [ext_resource type="PackedScene" uid="uid://orxnqpjckw6k" path="res://scenes/levels/level.tscn" id="1_66a1t"]
 [ext_resource type="Script" path="res://scenes/levels/outside.gd" id="2_jw5m0"]
@@ -15,9 +15,6 @@
 [ext_resource type="PackedScene" uid="uid://dgo067h2w0q4g" path="res://scenes/objects/steam_vent.tscn" id="11_fcepd"]
 [ext_resource type="PackedScene" uid="uid://b53dih70mh1vj" path="res://scenes/houses/house.tscn" id="12_ritx8"]
 [ext_resource type="PackedScene" uid="uid://dua3aoucs5gmy" path="res://scenes/objects/light_fan_animation.tscn" id="13_v3ywv"]
-[ext_resource type="PackedScene" uid="uid://cwjqjwl050amp" path="res://scenes/items/item.tscn" id="16_64g7w"]
-[ext_resource type="PackedScene" uid="uid://crtgxbqqu4bgk" path="res://scenes/objects/box.tscn" id="17_btmol"]
-[ext_resource type="PackedScene" uid="uid://cospeqcpfbk1v" path="res://scenes/objects/toilet.tscn" id="18_uwaxb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l1ea7"]
 resource_name = "walls"
@@ -55,6 +52,10 @@ sources/1 = SubResource("TileSetAtlasSource_h5q6y")
 
 [node name="Outside" instance=ExtResource("1_66a1t")]
 script = ExtResource("2_jw5m0")
+
+[node name="Gate" parent="." index="1" instance=ExtResource("2_pkxbg")]
+z_index = 1
+position = Vector2(137, -360)
 
 [node name="Soil" type="Sprite2D" parent="Ground" index="0"]
 texture_repeat = 2
@@ -114,17 +115,9 @@ position = Vector2(-340, 2378)
 autoplay = "default"
 frame_progress = 0.106604
 
-[node name="Gate" parent="." index="1" instance=ExtResource("2_pkxbg")]
-position = Vector2(137, -360)
-
-[node name="Toilet" parent="." index="3" instance=ExtResource("18_uwaxb")]
-position = Vector2(1600, 1284)
-rotation = 1.5708
-
-[node name="Box" parent="." index="4" instance=ExtResource("17_btmol")]
-position = Vector2(1306, 544)
-
-[node name="Item" parent="." index="8" instance=ExtResource("16_64g7w")]
-position = Vector2(220, 698)
+[node name="Player" parent="." index="5"]
+z_index = 2
 
 [connection signal="player_entered_gate" from="Gate" to="." method="_on_gate_player_entered_gate"]
+[connection signal="player_entered" from="Ground/House" to="." method="_on_house_player_entered"]
+[connection signal="player_exited" from="Ground/House" to="." method="_on_house_player_exited"]

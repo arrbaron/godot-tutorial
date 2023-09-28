@@ -9,6 +9,7 @@
 size = Vector2(235, 255)
 
 [node name="Toilet" instance=ExtResource("1_vgkry")]
+scale = Vector2(0.8, 0.8)
 script = ExtResource("2_o6alr")
 
 [node name="BaseSprite" parent="." index="0"]
