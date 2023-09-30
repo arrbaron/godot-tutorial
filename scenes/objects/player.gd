@@ -19,6 +19,7 @@ func handle_input():
 	var player_direction = (get_global_mouse_position() - position).normalized()
 	velocity = direction * speed
 	move_and_slide()
+	Globals.player_pos = global_position
 	
 	look_at(get_global_mouse_position())
 	
