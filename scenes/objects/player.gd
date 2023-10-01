@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+const ITEM_TYPE = Item.ITEM_TYPE
+
 @export var max_speed: int = 600
 var speed: int = max_speed
 
@@ -8,6 +10,7 @@ var can_grenade: bool = true
 
 signal laser(position: Vector2, direction: Vector2)
 signal grenade(position: Vector2, direction: Vector2)
+signal update_stats()
 
 
 func _process(_delta):
@@ -58,3 +61,11 @@ func _on_laser_timer_timeout():
 
 func _on_grenade_timer_timeout():
 	can_grenade = true
+
+func add_item(item_type: ITEM_TYPE) -> void:
+	if item_type == ITEM_TYPE.LASER:
+		Globals.laser_amount += 5
+	elif item_type == ITEM_TYPE.GRENADE:
+		Globals.grenade_amount += 1
+		
+	emit_signal('update_stats')
