@@ -23,10 +23,12 @@ func handle_input():
 		var laser_markers = $LaserStartPositions.get_children()
 		# var selected_laser = laser_markers[randi() % laser_markers.size()]
 		var selected_laser = laser_markers.pick_random()
+		$GPUParticles2D.emitting = true
 
 		can_laser = false
 		$LaserTimer.start()
 		laser.emit(selected_laser.global_position, player_direction)
+		
 		
 	if (Input.is_action_pressed("secondary action")):
 		if (!can_grenade): return
