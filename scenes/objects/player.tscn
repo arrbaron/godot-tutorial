@@ -46,6 +46,7 @@ wait_time = 2.0
 one_shot = true
 
 [node name="LaserStartPositions" type="Node2D" parent="."]
+position = Vector2(20, 0)
 
 [node name="Marker2D" type="Marker2D" parent="LaserStartPositions"]
 position = Vector2(127, 16)
