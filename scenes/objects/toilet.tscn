@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cospeqcpfbk1v"]
+[gd_scene load_steps=6 format=3 uid="uid://cospeqcpfbk1v"]
 
 [ext_resource type="PackedScene" uid="uid://b01u6sog5hs4q" path="res://scenes/objects/item_container.tscn" id="1_vgkry"]
 [ext_resource type="Script" path="res://scenes/objects/toilet.gd" id="2_o6alr"]
 [ext_resource type="Texture2D" uid="uid://b72wl2q5o4qmw" path="res://graphics/objects/toilet.png" id="3_0vdlb"]
+[ext_resource type="Texture2D" uid="uid://balo8a2ufpwgv" path="res://graphics/objects/lid.png" id="4_herw1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cmd7r"]
 size = Vector2(235, 255)
@@ -10,9 +11,16 @@ size = Vector2(235, 255)
 [node name="Toilet" instance=ExtResource("1_vgkry")]
 script = ExtResource("2_o6alr")
 
-[node name="CollisionShape2D" parent="." index="0"]
+[node name="BaseSprite" parent="." index="0"]
+texture = ExtResource("3_0vdlb")
+
+[node name="LidSprite" parent="." index="1"]
+position = Vector2(0, 12)
+texture = ExtResource("4_herw1")
+
+[node name="CollisionShape2D" parent="." index="2"]
 position = Vector2(-1.5, -0.5)
 shape = SubResource("RectangleShape2D_cmd7r")
 
-[node name="Sprite2D" parent="." index="1"]
-texture = ExtResource("3_0vdlb")
+[node name="Marker2D" type="Marker2D" parent="SpawnPositions" index="0"]
+position = Vector2(-1, 124)

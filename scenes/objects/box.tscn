@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://crtgxbqqu4bgk"]
+[gd_scene load_steps=6 format=3 uid="uid://crtgxbqqu4bgk"]
 
 [ext_resource type="PackedScene" uid="uid://b01u6sog5hs4q" path="res://scenes/objects/item_container.tscn" id="1_adk3a"]
-[ext_resource type="Texture2D" uid="uid://bmspbupxqdvd0" path="res://graphics/objects/Box.png" id="2_03154"]
 [ext_resource type="Script" path="res://scenes/objects/box.gd" id="2_pck21"]
+[ext_resource type="Texture2D" uid="uid://c8cbgnpsp2gjq" path="res://graphics/objects/box/base.png" id="3_ewr8k"]
+[ext_resource type="Texture2D" uid="uid://cckhtcoomoj1y" path="res://graphics/objects/box/lid.png" id="4_fysqf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vgu03"]
 size = Vector2(356, 254)
@@ -10,9 +11,36 @@ size = Vector2(356, 254)
 [node name="Box" instance=ExtResource("1_adk3a")]
 script = ExtResource("2_pck21")
 
-[node name="CollisionShape2D" parent="." index="0"]
+[node name="BaseSprite" parent="." index="0"]
+texture = ExtResource("3_ewr8k")
+
+[node name="LidSprite" parent="." index="1"]
+texture = ExtResource("4_fysqf")
+
+[node name="CollisionShape2D" parent="." index="2"]
 position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_vgu03")
 
-[node name="Sprite2D" parent="." index="1"]
-texture = ExtResource("2_03154")
+[node name="Marker2D" type="Marker2D" parent="SpawnPositions" index="0"]
+position = Vector2(-166, -73)
+
+[node name="Marker2D2" type="Marker2D" parent="SpawnPositions" index="1"]
+position = Vector2(160, -67)
+
+[node name="Marker2D3" type="Marker2D" parent="SpawnPositions" index="2"]
+position = Vector2(155, 73)
+
+[node name="Marker2D4" type="Marker2D" parent="SpawnPositions" index="3"]
+position = Vector2(-151, 80)
+
+[node name="Marker2D5" type="Marker2D" parent="SpawnPositions" index="4"]
+position = Vector2(-61, -29)
+
+[node name="Marker2D6" type="Marker2D" parent="SpawnPositions" index="5"]
+position = Vector2(58, 23)
+
+[node name="Marker2D7" type="Marker2D" parent="SpawnPositions" index="6"]
+position = Vector2(61, -28)
+
+[node name="Marker2D8" type="Marker2D" parent="SpawnPositions" index="7"]
+position = Vector2(-119, 27)
