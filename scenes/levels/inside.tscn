@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://drdwrwd8mlhf3"]
+[gd_scene load_steps=11 format=3 uid="uid://drdwrwd8mlhf3"]
 
 [ext_resource type="PackedScene" uid="uid://orxnqpjckw6k" path="res://scenes/levels/level.tscn" id="1_o48mv"]
 [ext_resource type="Script" path="res://scenes/levels/inside.gd" id="2_7p03l"]
 [ext_resource type="TileSet" uid="uid://cg38eb8md4lj8" path="res://scenes/levels/house.tres" id="2_grai7"]
 [ext_resource type="PackedScene" uid="uid://b6a2fqdx32mje" path="res://scenes/objects/simple_light.tscn" id="3_jqgep"]
+[ext_resource type="PackedScene" uid="uid://blpbc0a83rg8n" path="res://scenes/levels/outside.tscn" id="3_vmipx"]
 [ext_resource type="PackedScene" uid="uid://cospeqcpfbk1v" path="res://scenes/objects/toilet.tscn" id="4_nbtyy"]
 [ext_resource type="PackedScene" uid="uid://dua3aoucs5gmy" path="res://scenes/objects/light_fan_animation.tscn" id="5_q78t4"]
 [ext_resource type="PackedScene" uid="uid://crtgxbqqu4bgk" path="res://scenes/objects/box.tscn" id="6_qjy5f"]
@@ -14,6 +15,7 @@ size = Vector2(619, 185)
 
 [node name="Inside" instance=ExtResource("1_o48mv")]
 script = ExtResource("2_7p03l")
+outside_level_scene = ExtResource("3_vmipx")
 metadata/_edit_lock_ = true
 
 [node name="Ground" parent="." index="0"]
