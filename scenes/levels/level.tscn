@@ -113,11 +113,14 @@ rotation = 3.14159
 
 [node name="Player" parent="." instance=ExtResource("4_5ginh")]
 position = Vector2(581, 698)
-move_speed = 600
 
 [node name="Camera2D2" type="Camera2D" parent="Player"]
 zoom = Vector2(0.6, 0.6)
 position_smoothing_enabled = true
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+color = Color(0.643137, 0.498039, 0.105882, 1)
+energy = 0.21
 
 [connection signal="player_entered_gate" from="Gate" to="." method="_on_gate_player_entered_gate"]
 [connection signal="grenade" from="Player" to="." method="_on_player_grenade"]
