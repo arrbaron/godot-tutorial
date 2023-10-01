@@ -14,4 +14,4 @@ func handle_movement():
 		position = Vector2(0, position.y)
 
 func hit():
-	print('damage')
+	print('drone hit')

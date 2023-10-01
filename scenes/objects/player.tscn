@@ -25,7 +25,7 @@ color = Color(0.631373, 0.803922, 0.988235, 0.533333)
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_p507r"]
 polygon = PackedVector2Array(46, -31, 55, -31, 73, -13, 87, -13, 95, -7, 108, -5, 111, 2, 123, 0, 122, 5, 129, 5, 131, 15, 130, 28, 126, 32, 118, 26, 119, 34, 109, 33, 104, 33, 93, 48, 61, 50, 56, 40, 42, 39, -9, 58, -36, 54, -51, 26, -62, -3, -60, -26, -51, -42, -40, -49, -20, -61, 2, -64, 23, -64, 41, -45)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Entity"]]
 collision_mask = 31
 script = ExtResource("1_4yxw3")
 
