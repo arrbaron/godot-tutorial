@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var move_speed: int = 200
+@export var move_speed: int = 600
 var can_laser: bool = true
 var can_grenade: bool = true
 

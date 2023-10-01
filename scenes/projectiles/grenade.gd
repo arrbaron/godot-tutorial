@@ -1,3 +1,3 @@
 extends RigidBody2D
 
-const speed = 750
+@export var speed = 1500
