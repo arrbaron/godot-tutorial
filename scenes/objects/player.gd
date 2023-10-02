@@ -11,6 +11,10 @@ var can_grenade: bool = true
 signal laser(position: Vector2, direction: Vector2)
 signal grenade(position: Vector2, direction: Vector2)
 
+func _enter_tree():
+	for enemy in get_tree().get_nodes_in_group('Enemy'):
+		enemy.connect('attack', hit)
+
 func _process(_delta):
 	handle_input()
 	
